@@ -6,10 +6,10 @@
         --tertiary-color-1: #77613e;
         --text-color: #464b4f;
         --accent-color-1: #cba261;
+        --accent-color-2: #0d4a4f;
 }
 
 *{
-    /* border: 2px solid aqua; */
     box-sizing: border-box;
 }
 
@@ -19,6 +19,10 @@
     padding:0;
     box-sizing: border-box;
 }
+
+/* *{
+    border: 2px solid aqua;
+} */
 
 html{
     font-family: "Italiana", "Times New Roman", Times, serif;
@@ -39,7 +43,6 @@ header, main, footer{
     padding: 0;
     width:100%;
 }
-
 
 
 .nav-brand-container{
@@ -77,25 +80,27 @@ body.scroll .nav-brand-container{
     align-items: center;
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 110vh;
     background-image: url(./assets/images/image_1.jpg);
     background-size: cover;
 }
 
-/* .header_booking .booking-container{
-    background-color: var(--accent-color-1);
-    width: 250px; 
-    height: 300px; 
+.header_booking .booking-container{
+    background-color: var(--tertiary-color-1);
+    width: 600px; 
+    height: 400px; 
+    margin-top: 20vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px; 
+    /* border-top-left-radius: 120px;
+    border-top-right-radius: 120px;  */
     border-bottom-left-radius: 0; 
     border-bottom-right-radius: 0; 
     overflow: hidden;
     position: relative;
-} */
+} 
 
 .header_booking::before{
     content: '';
@@ -119,7 +124,6 @@ nav{
     width: 300px;
     top: 0;
     right: 0;
-  
     opacity: 0;
     transform: translateX(100%);
     transition: transform 0.9s ease, opacity 0.9s ease;
@@ -185,17 +189,164 @@ label svg{
     padding: 20px;
 }
 
+.welcome-heading{
+    text-transform: uppercase;
+    color: var(--accent-color-1);
+    text-align: center;
+    font-size: 60px;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.booking-container{
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2em;
+    padding-inline: 1.5em;
+}
+
+.booking-container div{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.welcome-paragraph{
+    text-align: center;
+    color: var(--accent-color-1);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24px;
+    font-weight: 500;
+}
+
 .button-booking{
-    background-color: var(--secondary-color-1);
+    background-color: transparent;
+    position: relative;
     border: 2px solid var(--accent-color-1);
     color: var(--primary-color);
     padding: 15px 50px;
     font-weight: 500;
     font-size: 16px;
+    transition: background-color 0.2s ease-in;
+    z-index: 99;
+    pointer-events: auto; 
 }
 
-.about{
-    height: 110vh;
-    background-color: var(--secondary-color-1);
+.button-booking:hover{
+    background-color: var(--accent-color-1);
+    cursor: pointer;
 }
 
+#about{
+    height: 60vh;
+    background-color: var(--primary-color);
+}
+
+#venue{
+    height: 100vh;
+    background: url('./assets/images/image_14.jpg') no-repeat center/cover;
+}
+
+
+#food{
+    height: 100vh;
+    background-color: var(--accent-color-1);
+    background-image: radial-gradient(
+        circle,
+        #ffffff 10%, 
+        transparent 10% 
+    );
+    background-size: 20px 20px;
+}
+
+.food-wrapper{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-inline: 6rem;
+    gap: 5rem;
+}
+
+.food-text{
+    color: var(--accent-color-2);
+}
+
+.food-text .food-heading{
+    font-size: 72px;
+    margin: 0;
+    font-weight: 700;
+}
+
+.food-text-wrapper{
+    width: 50%;
+    padding-inline:5rem;
+    background-color: var(--accent-color-1);
+}
+
+.food-image-container{
+    position: relative;
+    width: 50%;
+}
+.large-image{
+    width: 100%;
+    border-radius: 16px;
+}
+.small-image{
+    position: absolute;
+    height: 300px;
+    width: 40%;
+    top: 40%;
+    right: 75%;
+    border-radius: 16px;
+}
+
+.food-paragraph{
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.view-menu{
+    color: var(--primary-color);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+#drinks{
+    height: 200vh;
+    background-color: var(--tertiary-color-1);
+}
+
+footer{
+    height: 35vh;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-columns: 2.5fr 1fr 2fr 2fr;
+    height: 100%;
+}
+
+.footer-container{
+    height: 100%;
+    font-size: 18px;
+    color: var(--text-color);
+}
+
+.footer-info{
+    padding-top: 2em;
+}
+
+.footer-brand p, .footer-info div{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.footer-brand{
+    padding-inline: 1em;
+}
