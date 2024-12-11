@@ -11,6 +11,7 @@
 
 *{
     box-sizing: border-box;
+    /* border: 2px solid aqua; */
 }
 
 *::after,
@@ -19,10 +20,6 @@
     padding:0;
     box-sizing: border-box;
 }
-
-/* *{
-    border: 2px solid aqua;
-} */
 
 html{
     font-family: "Italiana", "Times New Roman", Times, serif;
@@ -86,7 +83,7 @@ body.scroll .nav-brand-container{
 }
 
 .header_booking .booking-container{
-    background-color: var(--tertiary-color-1);
+    background-color: var(--secondary-color-1);
     width: 600px; 
     height: 400px; 
     margin-top: 20vh;
@@ -277,6 +274,10 @@ label svg{
     color: var(--accent-color-2);
 }
 
+.food-subheading{
+    color: var(--primary-color);
+}
+
 .food-text .food-heading{
     font-size: 72px;
     margin: 0;
@@ -319,34 +320,127 @@ label svg{
 }
 
 #drinks{
-    height: 200vh;
-    background-color: var(--tertiary-color-1);
+    height: 150vh;
+    color: var(--primary-color);
+}
+
+.drinks-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#drinks .drinks-heading{
+    width: 50%;
+    padding: 2em;
+}
+
+#drinks .drinks-heading h3{
+    font-size: 56px;
+    text-align: center;
+    color: var(--accent-color-2);
+}
+
+.drinks-header-image img{
+    width: 100px;
+    height: auto;
+}
+
+.slider-container{
+    position: relative;
+    top: 5%;
+    width: 100%;
+    height: 600px;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.slider-wrap{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    overflow: scroll;
+}
+
+.slider-image img {
+    -webkit-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+    height: 100%;
+    border-radius: 100px;
+}
+
+
+.slider-wrap::-webkit-scrollbar{
+    display: none;
+}
+
+.slider{
+    position: absolute;
+    display: flex;
+    gap: 25px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3000px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.slider-image{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 footer{
     height: 35vh;
+    background-color: var(--accent-color-2);
 }
 
 .footer-container{
     display: grid;
     grid-template-columns: 2.5fr 1fr 2fr 2fr;
     height: 100%;
+    color: var(--text-color);
+    padding-inline: 3em;
 }
 
-.footer-container{
-    height: 100%;
-    font-size: 18px;
-    color: var(--text-color);
-}
 
 .footer-info{
     padding-top: 2em;
+    color: var(--primary-color);
 }
 
 .footer-brand p, .footer-info div{
     font-family: 'Courier New', Courier, monospace;
+    color: var(--primary-color);
 }
 
-.footer-brand{
-    padding-inline: 1em;
+.footer-brand-p{
+    padding-right: 3em;
+}
+
+.footer-brand-name{
+    color: var(--primary-color);
+}
+
+.social-media-icons{
+    display: flex;
+    gap: 1.5em;
+}
+.social-media-icons svg{
+    fill: var(--primary-color);
+}
+
+.social-media-icons svg:hover{
+    fill: var(--text-color);
+    cursor: pointer;
 }
