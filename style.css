@@ -91,8 +91,6 @@ body.scroll .nav-brand-container{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* border-top-left-radius: 120px;
-    border-top-right-radius: 120px;  */
     border-bottom-left-radius: 0; 
     border-bottom-right-radius: 0; 
     overflow: hidden;
@@ -353,43 +351,32 @@ label svg{
 }
 
 .slider{
-    display: grid;
-    grid-auto-flow: column;
-    /* grid-auto-columns: 21%; */
-    gap: 2rem;
-    overflow-x: auto;
-    
-    /* position: absolute;
-    top: 0%;
-    left: 0%;
     display: flex;
-    gap: 25px;
-    height: 100%;
-    width: 100%;*/
-    /* overflow-y: hidden;  */
-    scroll-snap-type: inline mandatory; 
+    gap: 2rem;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    overscroll-behavior:auto;
+    scroll-padding: 2rem;
+    cursor: grab;
 }
 
-.slider-image{
- 
+.slider.active{
+    cursor:grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
 }
+
+ .slider-image{
+ scroll-snap-align: center;
+} 
 
 .slider-image img {
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    user-drag: none;
     width: 400px;
     height: auto;
     border-radius: 100px;
-}
-
-.slider-image{
-    /* position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center; */
-    /* height: auto; */
 }
 
 footer{
