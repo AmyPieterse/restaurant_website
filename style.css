@@ -11,7 +11,7 @@
 
 *{
     box-sizing: border-box;
-    /* border: 2px solid aqua; */
+    border: 2px solid aqua;
 }
 
 *::after,
@@ -249,7 +249,6 @@ label svg{
     background: url('./assets/images/image_14.jpg') no-repeat center/cover;
 }
 
-
 #food{
     height: 100vh;
     background-color: var(--accent-color-1);
@@ -346,25 +345,33 @@ label svg{
     height: auto;
 }
 
-.slider-container{
-    position: relative;
-    top: 5%;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-    cursor: grab;
+
+
+
+.slider::-webkit-scrollbar{
+    display: none;
 }
 
-.slider-wrap{
-    position: absolute;
+.slider{
+    display: grid;
+    grid-auto-flow: column;
+    /* grid-auto-columns: 21%; */
+    gap: 2rem;
+    overflow-x: auto;
+    
+    /* position: absolute;
     top: 0%;
     left: 0%;
+    display: flex;
+    gap: 25px;
     height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 5px;
-    overflow: scroll;
+    width: 100%;*/
+    /* overflow-y: hidden;  */
+    scroll-snap-type: inline mandatory; 
+}
+
+.slider-image{
+ 
 }
 
 .slider-image img {
@@ -372,32 +379,17 @@ label svg{
     -moz-user-drag: none;
     -o-user-drag: none;
     user-drag: none;
-    height: 100%;
+    width: 400px;
+    height: auto;
     border-radius: 100px;
 }
 
-
-.slider-wrap::-webkit-scrollbar{
-    display: none;
-}
-
-.slider{
-    position: absolute;
-    display: flex;
-    gap: 25px;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 3000px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
 .slider-image{
-    position: relative;
+    /* position: relative;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
+    /* height: auto; */
 }
 
 footer{

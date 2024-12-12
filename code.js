@@ -1,13 +1,19 @@
 
 const slider = document.querySelector('.slider')
 
-window.addEventListener('scroll', function(){
-    if (window.scrollY > 0){
+
+const scrolled = () => {
+    if (window.scrollY > 0) {
         document.body.classList.add('scroll');
-    } else{
+    } else {
         document.body.classList.remove('scroll');
     }
-});
+};
+
+scrolled();
+
+window.addEventListener('scroll', scrolled);
+window.addEventListener('focus', scrolled);
 
 let sliderGrabbed = false;
 
@@ -33,6 +39,10 @@ slider.addEventListener('mousemove', (e)=>{
         slider.parentElement.scrollLeft-=e.movementX; 
     }
 })
+
+
+
+
 
 
 
