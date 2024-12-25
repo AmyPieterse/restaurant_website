@@ -1,18 +1,19 @@
 const slider = document.querySelector('.slider')
+const parallax = document.querySelector('.parallax')
 
 
 const scrolled = () => {
-    if (window.scrollY > 0) {
-        document.body.classList.add('scroll');
+    // console.log('hello')
+    // console.log(parallax.scrollTop)
+    if (parallax.scrollTop > 0) {
+        parallax.classList.add('scroll');
     } else {
-        document.body.classList.remove('scroll');
+        parallax.classList.remove('scroll');
     }
 };
 
-scrolled(); //navbar transparent scroll
-
-window.addEventListener('scroll', scrolled);
-window.addEventListener('focus', scrolled);
+parallax.addEventListener('scroll', scrolled);
+parallax.addEventListener('focus', scrolled);
 
 let sliderGrabbed = false;
 let startX;
@@ -44,11 +45,6 @@ slider.addEventListener('mousemove', (e)=>{
     console.log({x,startX})
     const walk = x-startX;
     slider.scrollLeft = scrollLeft -walk;
-    // console.count(sliderGrabbed)
-    // console.log(startX)
-    // if (sliderGrabbed){
-    //     slider.parentElement.scrollLeft-=e.movementX; 
-    // }
 })
 
 

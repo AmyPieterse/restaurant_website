@@ -11,7 +11,7 @@
 
 *{
     box-sizing: border-box;
-    border: 2px solid aqua;
+    /* border: 2px solid aqua; */
 }
 
 *::after,
@@ -35,12 +35,16 @@ html, body{
     height: 100%;
 }
 
+.parallax{
+    height: 100vh;
+    overflow-y: auto;
+}
+
 header, main, footer{
     margin: 0;
     padding: 0;
     width:100%;
 }
-
 
 .nav-brand-container{
     position: fixed;
@@ -56,10 +60,9 @@ header, main, footer{
     transition: background-color 0.2s ease-in;
 }
 
-body.scroll .nav-brand-container{
+.parallax.scroll .nav-brand-container{
     background-color: #2c2620; 
 }
-
 
 .and{
     color: var(--accent-color-1);
@@ -104,7 +107,7 @@ body.scroll .nav-brand-container{
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(to bottom, #2c2620, transparent 30%), url('your-image.jpg') no-repeat center/cover;
+    background: linear-gradient(to bottom, #2c2620, transparent 30%);
     z-index: 1;
 }
 
@@ -228,7 +231,7 @@ label svg{
     font-weight: 500;
     font-size: 16px;
     transition: background-color 0.2s ease-in;
-    z-index: 99;
+    z-index: 98;
     pointer-events: auto; 
 }
 
@@ -343,9 +346,6 @@ label svg{
     height: auto;
 }
 
-
-
-
 .slider::-webkit-scrollbar{
     display: none;
 }
@@ -357,25 +357,49 @@ label svg{
     overflow-y: hidden;
     overscroll-behavior:auto;
     scroll-padding: 2rem;
-    cursor: grab;
+    cursor: url('./assets/images/drag.svg'), grab;
+    padding-left: 3.5rem;
 }
 
+
+
 .slider.active{
-    cursor:grabbing;
+    cursor: url('./assets/images/drag.svg'), grab;
     cursor: -webkit-grabbing;
     transform: scale(1);
 }
 
- .slider-image{
- scroll-snap-align: center;
-} 
+/* #custom-cursor {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 100%;  
+    pointer-events: none;
+    opacity: 0;  
+    transition: transform 0.1s ease;
+    z-index: 99;  
+    display: none;  
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+}
+
+.slider:hover #custom-cursor {
+    opacity: 1;
+} */
 
 .slider-image img {
     -webkit-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
+    object-fit: cover;
     width: 400px;
-    height: auto;
+    height: 100%;
+    overflow: hidden;
     border-radius: 100px;
 }
 
