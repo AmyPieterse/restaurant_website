@@ -3,12 +3,12 @@
   <circle cx="75" cy="75" r="70" fill="black"/>
   
   <!-- Left Arrow -->
-  <text x="30" y="75" font-size="28" text-anchor="middle" fill="white">&#60;</text>
+  <text x="30" y="80" font-size="28" text-anchor="middle" fill="white">&#60;</text>
   
   <!-- Text "Drag" -->
-  <text x="75" y="75" font-size="28" text-anchor="middle" fill="white">Drag</text>
+  <text x="75" y="80" font-size="28" text-anchor="middle" fill="white">Drag</text>
   
   <!-- Right Arrow -->
-  <text x="120" y="75" font-size="28" text-anchor="middle" fill="white">&#62;</text>
+  <text x="120" y="80" font-size="28" text-anchor="middle" fill="white">&#62;</text>
 </svg>
 
